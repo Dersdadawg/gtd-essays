@@ -83,7 +83,7 @@ for fn in sorted(os.listdir(CARDS)):
     st = stage.get(name, '—')
     limit = re.search(r'\(([^()]*(?:words?|characters?|max|maximum)[^()]*)\)', prompt_txt, re.I)
     cards.append(dict(name=name, school=school, etype=etype, stage=st,
-                      limit=limit.group(1) if limit else '—'))
+                      limit=re.sub(r'^(Please )?respond in ', '', limit.group(1), flags=re.I) if limit else '—'))
     included.add(name)
     sk = 'Cornell' if school.startswith('Cornell') else school
     k = key(school)
@@ -193,6 +193,35 @@ for f in ['Essay Themes', 'Ps Feedback']:
     included.add(f)
 
 included |= {'Essay Hub', 'College Essays Kanban', 'College Essays Work Log'}
+TYPE_NAMES = {
+    'why-major': ('Why Major / Academic Interest', 'Why this field, and what you\'d study there.'),
+    'short-answer': ('Short Answers & Lists', 'Rapid-fire questions, roommate notes, lists.'),
+    'diversity': ('Identity & Lived Experience', 'Background, lived experience, what you\'d bring to campus.'),
+    'community': ('Community', 'Communities you belong to or would build.'),
+    'personal-statement': ('Personal Statement / Talent', 'Who you are; your defining story or skill.'),
+    'disagreement': ('Disagreement & Different Viewpoints', 'Engaging someone who sees it differently.'),
+    'intellectual': ('Intellectual Curiosity', 'Ideas that excite you; learning outside class.'),
+    'why-college': ('Why This College', 'Fit with a specific school.'),
+    'extracurricular': ('Activities', 'The activity that shaped you most.'),
+    'challenge': ('Challenge & Adversity', 'Handling the unexpected; how you changed.'),
+}
+groups = {}
+for c in cards:
+    groups.setdefault(c['etype'] or 'other', []).append(c)
+th = ['Essays grouped by type, so one idea can be drafted once and adapted across schools. Generated from the `essay-type` tag on each essay note.\n',
+      '| Type | Essays | Done |', '|---|---|---|']
+order = sorted(groups, key=lambda g: (-len(groups[g]), g))
+for g in order:
+    name = TYPE_NAMES.get(g, (g.title(), ''))[0]
+    anchor_ = re.sub(r'[^a-z0-9 -]', '', name.lower()).replace(' ', '-')
+    th.append(f'| [[#{name}]] | {len(groups[g])} | {sum(c["complete"] for c in groups[g])} |')
+for g in order:
+    name, desc = TYPE_NAMES.get(g, (g.title(), ''))
+    th += ['', f'## {name}', '', f'*{desc}*' if desc else '', '',
+           '| Essay | Word limit | Stage | Done? |', '|---|---|---|---|']
+    for c in sorted(groups[g], key=lambda c: c['name']):
+        th.append(f'| [[{c["name"]}]] | {c["limit"]} | {c["stage"]} | {"✅" if c["complete"] else "⬜"} |')
+misc['Essay Themes'] = '\n'.join(th)
 def page_of(k):
     return 'Common App' if k == 'Common App' else f"[[{'UC PIQs' if k == 'UC' else k + ' Supplementals'}\\|{k}]]"
 wl = ['---\ntitle: College Essays Work Log\n---\n',
@@ -207,7 +236,7 @@ def unlink_missing(t):
     def rep(m):
         target, alias = m.group(1), m.group(2)
         base = target.split('#')[0].rstrip('\\')
-        if base in included or base.startswith(('UC PIQ', 'Common App —')):
+        if base == '' or base in included or base.startswith(('UC PIQ', 'Common App —')):
             return m.group(0)
         return f'{alias or base} *(private)*'
     return re.sub(r'\[\[([^\]|]+)(?:\|([^\]]+))?\]\]', rep, t)

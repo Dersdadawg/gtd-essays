@@ -105,10 +105,10 @@ Central index for the whole college essay season. Progress lives on the [[Colleg
 | NYU | [[NYU — Bridge Builders Essay]] | — | Not Started | ⬜ | 12/15 (proj.) |
 | Northwestern | [[Northwestern — Background & Identity]] | fewer than 300 words | Not Started | ⬜ | 12/7 (proj.) |
 | Northwestern | [[Northwestern — Optional Prompt (choose 1–2 of 5)]] | fewer than 200 words each | Not Started | ⬜ | 12/7 (proj.) |
-| Princeton | [[Princeton — Community]] | Please respond in 250 words or fewer. | Drafting | ⬜ | 12/6 (proj.) |
-| Princeton | [[Princeton — Lived Experience]] | Please respond in 500 words or fewer. | Drafting | ⬜ | 12/6 (proj.) |
+| Princeton | [[Princeton — Community]] | 250 words or fewer. | Drafting | ⬜ | 12/6 (proj.) |
+| Princeton | [[Princeton — Lived Experience]] | 500 words or fewer. | Drafting | ⬜ | 12/6 (proj.) |
 | Princeton | [[Princeton — Short Answers (3)]] | 50 words max each | Drafting | ⬜ | 12/6 (proj.) |
-| Princeton | [[Princeton — Why Major]] | Please respond in 250 words or fewer | — | ⬜ | 12/6 (proj.) |
+| Princeton | [[Princeton — Why Major]] | 250 words or fewer | — | ⬜ | 12/6 (proj.) |
 | Stanford | [[Stanford — Distinctive Contribution]] | — | Done ✅ | ✅ | 11/26  |
 | Stanford | [[Stanford — Intellectual Curiosity]] | 100 to 250 words | Done ✅ | ✅ | 11/26  |
 | Stanford | [[Stanford — Roommate Note]] | 100 to 250 words | Done ✅ | ✅ | 11/26  |

@@ -9,7 +9,7 @@ tags: [essays, princeton]
 | **Application deadline** | Jan 1, 2027 (RD) |
 | **Common App school?** | Yes · Common App done ✅ |
 | **Essay type** | why-major |
-| **Word limit** | Please respond in 250 words or fewer |
+| **Word limit** | 250 words or fewer |
 | **Stage** | **—** |
 | **Complete?** | ⬜ No |
 | **Completion date** | Dec 6, 2026 (projected) |
