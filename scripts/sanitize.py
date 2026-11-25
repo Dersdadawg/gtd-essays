@@ -7,6 +7,17 @@ CARDS = os.path.join(SRC, '200_PROJECTS', '"College Essays"', 'Essay Cards')
 INBOX = os.path.join(SRC, '000_INBOX')
 PROJ = os.path.join(SRC, '200_PROJECTS')
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from plan import SCHOOLS, COMMON_APP_DONE, DONE, PLAN
+D = lambda x: dt.date.fromisoformat(x)
+fmt = lambda x: D(x).strftime('%b %-d, %Y')
+short = lambda x: D(x).strftime('%-m/%-d')
+def key(school):
+    return 'Cornell' if school.startswith('Cornell') else school
+def days_worked(k):
+    return ', '.join(short(d) for d, ss, _ in DONE if k in ss) or '—'
+GDOC_LINK = '[Master Question List (Google Doc)](https://docs.google.com/document/d/1HgrO45v8nDYPUwoz0eBR0dgdfUxdrJf-7kCIJ1MtlG8/edit?usp=sharing)'
+
 shutil.rmtree(OUT, ignore_errors=True)
 os.makedirs(os.path.join(OUT, 'Essay Cards'))
 os.makedirs(os.path.join(OUT, 'Schools'))
@@ -75,13 +86,28 @@ for fn in sorted(os.listdir(CARDS)):
                       limit=limit.group(1) if limit else '—'))
     included.add(name)
     sk = 'Cornell' if school.startswith('Cornell') else school
-    out = [f'---\ntitle: "{title}"\ntags: [essays, {sk.lower().replace(" ", "-")}]\n---\n',
-           f'| School | Type | Stage | Deadline | Word limit | Draft |\n|---|---|---|---|---|---|\n'
-           f'| {("[[" + sk + " Supplementals\\|" + school + "]]") if sk != "Common App" else school} | {etype or "—"} | **{st}** | {DEADLINES.get(sk, "—")} | {cards[-1]["limit"]} | '
-           f'{"✅ exists" if has_draft else "not started"} |\n',
+    k = key(school)
+    complete = st == 'Submitted' or name.startswith('Georgetown — Personal')
+    if k == 'Common App':
+        ca, cdate, dl = 'Yes · done ✅', COMMON_APP_DONE, 'Nov 1, 2026'
+    else:
+        plan_, dl_, is_ca, sdate, _ = SCHOOLS[k]
+        ca = ('Yes · Common App done ✅' if is_ca else 'No (own application)')
+        cdate = COMMON_APP_DONE if (complete and k in ('Harvard', 'UIUC') or name.startswith('Georgetown — Personal')) else sdate
+        dl = fmt(dl_) + f' ({plan_})'
+    cards[-1].update(complete=complete, cdate=cdate)
+    when = f'{fmt(cdate)} ({"actual" if complete else "projected"})'
+    school_cell = ("[[" + k + " Supplementals\\|" + school + "]]") if k != "Common App" else school
+    rows = [('School', school_cell), ('Application deadline', dl), ('Common App school?', ca),
+            ('Essay type', etype or '—'), ('Word limit', cards[-1]['limit']), ('Stage', f'**{st}**'),
+            ('Complete?', '✅ Yes' if complete else '⬜ No'), ('Completion date', when),
+            ('Days worked on', days_worked(k) + ' (see [[College Essays Work Log]])'),
+            ('Working document', GDOC_LINK)]
+    out = [f'---\ntitle: "{title}"\ntags: [essays, {k.lower().replace(" ", "-")}]\n---\n',
+           '| | |\n|---|---|\n' + ''.join(f'| **{a}** | {b} |\n' for a, b in rows),
            '## Prompt\n', prompt_txt.strip() + '\n',
            '## Feedback\n', (feedback or '*(none yet)*') + '\n',
-           '> [!note] Draft text is kept private. This page shows the prompt, status and feedback only.\n']
+           '> [!note] Draft text is kept private. This page shows the prompt, status and feedback; the essay itself lives in the working document.\n']
     cards[-1]['body'] = '\n'.join(out)
 
 # --- school index pages (replace dataview with static tables) ---
@@ -109,13 +135,25 @@ for c in cards:
 
 # --- hub ---
 hub = open(os.path.join(PROJ, 'Essay Hub.md')).read().replace('#essays\n', '')
-master = '| School | Essay | Type | Word limit | Stage | Deadline |\n|---|---|---|---|---|---|\n' + ''.join(
-    f'| {c["school"]} | [[{c["name"]}]] | {c["etype"] or "—"} | {c["limit"]} | {c["stage"]} | '
-    f'{DEADLINES.get("Cornell" if c["school"].startswith("Cornell") else c["school"], "—")} |\n'
+master = '| School | Essay (action item) | Word limit | Stage | Complete? | Completion date |\n|---|---|---|---|---|---|\n' + ''.join(
+    f'| {c["school"]} | [[{c["name"]}]] | {c["limit"]} | {c["stage"]} | {"✅" if c["complete"] else "⬜"} | '
+    f'{short(c["cdate"])} {"" if c["complete"] else "(proj.)"} |\n'
     for c in sorted(cards, key=lambda c: (c['school'], c['name'])))
 hub = re.sub(r'```dataview.*?```', master, hub, flags=re.S)
 hub = hub.replace('# Essay Hub\n', '')
-hub = '---\ntitle: Essay Hub\n---\n' + hub.strip() + '\n'
+dash = ['| School | Deadline | Common App school? / done? | Essays done | Complete? | Completion date | Days worked on |',
+        '|---|---|---|---|---|---|---|']
+sd = lambda x: D(x).strftime('%b %-d')
+for k, (plan_, dl_, is_ca, sdate, comp) in sorted(SCHOOLS.items(), key=lambda kv: (kv[1][1], kv[0])):
+    mine = [c for c in cards if key(c['school']) == k]
+    n_done = sum(c['complete'] for c in mine)
+    page = 'UC PIQs' if k == 'UC' else f'{k} Supplementals'
+    dash.append(f'| [[{page}\\|{k}]] | {sd(dl_)} ({plan_}) | {"Yes / ✅ done" if is_ca else "No (own app)"} | '
+                f'{n_done}/{len(mine)} | {"✅ Yes" if comp else "⬜ No"} | {sd(sdate)} {"✅" if comp else "(projected)"} | {days_worked(k)} |')
+dash = ('## Application Dashboard\n\nOne row per school (each school is a project). Common App submitted ' + fmt(COMMON_APP_DONE) +
+        ' with my early apps, so every Common App school only has supplementals left. Dates worked come from the [[College Essays Work Log]].\n\n' + '\n'.join(dash) + '\n\n')
+hub = '---\ntitle: Essay Hub\n---\n' + dash + hub.strip() + '\n'
+
 
 # --- kanban -> readable board ---
 k = re.sub(r'(?s)^---.*?---\n', '', kanban)
@@ -134,14 +172,23 @@ k = re.sub(r'(?m)^## (Brainstorming|Final Review)\n\s*\n(?=## )', r'## \1\n\n*(e
 
 # --- other notes ---
 misc = {}
-for f in ['Essay Themes', 'Ps Feedback', 'College Essays Work Log']:
+for f in ['Essay Themes', 'Ps Feedback']:
     t = open(os.path.join(INBOX, f + '.md')).read().replace('#essays', '').strip()
     if f == 'Essay Themes':
         t = '\n'.join(l for l in t.splitlines() if not l.startswith('Something about'))
     misc[f] = t
     included.add(f)
 
-included |= {'Essay Hub', 'College Essays Kanban'}
+included |= {'Essay Hub', 'College Essays Kanban', 'College Essays Work Log'}
+def page_of(k):
+    return 'Common App' if k == 'Common App' else f"[[{'UC PIQs' if k == 'UC' else k + ' Supplementals'}\\|{k}]]"
+wl = ['---\ntitle: College Essays Work Log\n---\n',
+      'One line per work session. **Done** = sessions I actually worked; **Planned** = my schedule to finish every essay by Dec 20. Planned rows move up to Done as I go.\n',
+      '## Done\n', '| Date | Schools | What I did |\n|---|---|---|']
+wl += [f'| {fmt(d)} | {", ".join(page_of(x) for x in ss)} | {w} |' for d, ss, w in DONE]
+wl += ['\n## Planned\n', '| Date | Schools | Plan |\n|---|---|---|']
+wl += [f'| {fmt(d)} | {", ".join(page_of(x) for x in ss)} | {w} |' for d, ss, w in PLAN]
+misc['College Essays Work Log'] = '\n'.join(wl[1:])
 
 def unlink_missing(t):
     def rep(m):
@@ -169,11 +216,11 @@ title: Anders's College Essays — GTD Dashboard
 ---
 A read-only view of the Obsidian system I use to run my college applications.
 
-- **[[Essay Hub]]**: the index: every school, every essay, deadlines and stages
+- **[[Essay Hub]]**: application dashboard (deadline, Common App status, completion per school) + every essay\n- **[[College Essays Work Log]]**: days worked and the plan through Dec 20
 - **[[College Essays Kanban]]**: the board: each essay moves Not Started → Drafting → Revising → Final Review → Submitted
 
 **{done} of {len(cards)}** essay cards submitted · last updated {today}
 
-> [!note] Drafts are kept private. Essay pages show the prompt, word limit, stage and feedback only.
+> [!note] Drafts are kept private. Essay pages show the prompt, word limit, status, dates and feedback only.
 ''')
 print(len(cards), 'cards;', len(SCHOOL_FILES), 'school pages')

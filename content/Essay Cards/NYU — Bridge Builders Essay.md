@@ -3,9 +3,18 @@ title: "NYU — Bridge Builders Essay"
 tags: [essays, nyu]
 ---
 
-| School | Type | Stage | Deadline | Word limit | Draft |
-|---|---|---|---|---|---|
-| [[NYU Supplementals\|NYU]] | community | **Not Started** | Jan 5, 2027 | — | ✅ exists |
+| | |
+|---|---|
+| **School** | [[NYU Supplementals\|NYU]] |
+| **Application deadline** | Jan 5, 2027 (RD) |
+| **Common App school?** | Yes · Common App done ✅ |
+| **Essay type** | community |
+| **Word limit** | — |
+| **Stage** | **Not Started** |
+| **Complete?** | ⬜ No |
+| **Completion date** | Dec 18, 2026 (projected) |
+| **Days worked on** | 9/25 (see [[College Essays Work Log]]) |
+| **Working document** | [Master Question List (Google Doc)](https://docs.google.com/document/d/1HgrO45v8nDYPUwoz0eBR0dgdfUxdrJf-7kCIJ1MtlG8/edit?usp=sharing) |
 
 ## Prompt
 
@@ -21,4 +30,4 @@ tags: [essays, nyu]
 
 *(none yet)*
 
-> [!note] Draft text is kept private. This page shows the prompt, status and feedback only.
+> [!note] Draft text is kept private. This page shows the prompt, status and feedback; the essay itself lives in the working document.

@@ -1,0 +1,80 @@
+"""Application dashboard data: edit this file to update the site.
+
+DONE   = dates actually worked (from daily notes, note edit dates and the Obsidian work log)
+PLAN   = planned work sessions; move a line from PLAN to DONE once you've actually done it
+"""
+# school key: (plan, deadline, Common App school?, essays done date or projected date, essays complete?)
+SCHOOLS = {
+    'Harvard':      ('REA',            '2026-11-01', True,  '2026-11-01', True),
+    'UIUC':         ('EA',             '2026-11-01', True,  '2026-11-01', True),
+    'UC':           ('RD',             '2026-11-30', False, '2026-11-27', False),
+    'Columbia':     ('RD',             '2027-01-01', True,  '2026-12-03', False),
+    'Princeton':    ('RD',             '2027-01-01', True,  '2026-12-05', False),
+    'Northwestern': ('RD',             '2027-01-01', True,  '2026-12-06', False),
+    'Yale':         ('RD',             '2027-01-02', True,  '2026-12-07', False),
+    'Dartmouth':    ('RD',             '2027-01-02', True,  '2026-12-08', False),
+    'Cornell':      ('RD',             '2027-01-02', True,  '2026-12-09', False),
+    'MIT':          ('Regular Action', '2027-01-04', False, '2026-12-11', False),
+    'CMU':          ('RD',             '2027-01-04', True,  '2026-12-12', False),
+    'Stanford':     ('RD',             '2027-01-05', True,  '2026-12-14', False),
+    'UPenn':        ('RD',             '2027-01-05', True,  '2026-12-15', False),
+    'Brown':        ('RD',             '2027-01-05', True,  '2026-12-17', False),
+    'NYU':          ('RD',             '2027-01-05', True,  '2026-12-18', False),
+    'Georgetown':   ('RD',             '2027-01-10', False, '2026-12-19', False),
+}
+COMMON_APP_DONE = '2026-11-01'   # submitted with Harvard REA + UIUC EA
+
+DONE = [
+    ('2026-08-06', ['Harvard', 'Dartmouth'], 'Harvard supplementals; first Dartmouth essay'),
+    ('2026-08-10', ['Georgetown'], 'Set up personal essay (reusing Common App PS)'),
+    ('2026-08-15', ['UC'], 'Extended Opportunity PIQ; revised Community, Talent, Academic PIQs'),
+    ('2026-08-17', ['Common App'], 'Personal statement'),
+    ('2026-09-03', ['Harvard', 'Columbia', 'UIUC', 'Dartmouth', 'Brown'], 'Essay block across five schools'),
+    ('2026-09-12', ['Harvard', 'UC', 'Columbia'], 'Harvard, UC PIQs, Columbia'),
+    ('2026-09-13', ['MIT', 'Dartmouth', 'Brown'], 'MIT supplementals, Dartmouth personal essay, Brown Teach a Class'),
+    ('2026-09-20', ['Columbia', 'Dartmouth', 'MIT'], 'Drafts updated'),
+    ('2026-09-21', ['Stanford', 'Princeton', 'Harvard'], 'Stanford supplementals; Princeton started; Harvard EC conclusion'),
+    ('2026-09-22', ['Yale', 'UPenn', 'Brown'], 'Drafts updated'),
+    ('2026-09-25', ['Cornell', 'Northwestern', 'Georgetown', 'CMU', 'NYU'], 'First drafts for all five schools'),
+    ('2026-10-10', ['Princeton'], 'Lived Experience'),
+    ('2026-10-12', ['Harvard'], 'Diversity + How I\'ll Use My Education revisions'),
+    ('2026-10-18', ['Harvard'], 'EC + Roommate revisions'),
+    ('2026-10-24', ['Harvard'], 'Disagreement essay'),
+    ('2026-11-01', ['Harvard', 'UIUC', 'Common App'], 'Submitted Harvard REA + UIUC EA'),
+    ('2026-11-05', ['UC', 'Stanford'], 'All four PIQs revised; Stanford Roommate Note'),
+    ('2026-11-13', ['MIT'], 'Unconventional Path'),
+    ('2026-11-16', ['Stanford', 'UC'], 'Stanford Intellectual Curiosity; UC Academic Subject PIQ'),
+    ('2026-11-18', ['Georgetown'], 'Personal essay (Common App reuse)'),
+    ('2026-11-19', ['UC', 'Stanford'], 'Revised UC Opportunity PIQ, Stanford Short Answers'),
+    ('2026-11-21', ['Stanford'], 'Stanford Distinctive Contribution'),
+    ('2026-11-22', ['Stanford'], 'Stanford Distinctive Contribution'),
+    ('2026-11-23', ['Stanford'], 'Stanford Distinctive Contribution'),
+]
+
+PLAN = [
+    ('2026-11-26', ['UC', 'Columbia'], 'Final pass on all four PIQs; Columbia lists + Lived Experience'),
+    ('2026-11-27', ['UC', 'Princeton'], 'Submit UC application; Princeton Community'),
+    ('2026-11-28', ['Columbia', 'Northwestern'], 'Columbia Adversity + Disagreement; Northwestern Background'),
+    ('2026-11-29', ['Princeton', 'Yale'], 'Princeton Lived Experience; Yale Why This Area'),
+    ('2026-11-30', ['Columbia', 'Northwestern', 'Dartmouth'], 'Why Columbia; start Northwestern optional prompt; Why Dartmouth'),
+    ('2026-12-01', ['Yale', 'Cornell'], 'Yale 400-word essay; Cornell A&S revision'),
+    ('2026-12-02', ['Princeton', 'Dartmouth', 'MIT'], 'Princeton Why Major; Dartmouth Pick One; MIT Unexpected Challenge'),
+    ('2026-12-03', ['Columbia', 'Northwestern'], 'Columbia Why Major — Columbia done; Northwestern optional'),
+    ('2026-12-04', ['Yale', 'Cornell', 'CMU'], 'Yale short takes; Cornell cut to length; CMU Why Major'),
+    ('2026-12-05', ['Princeton', 'MIT'], 'Princeton short answers — Princeton done; MIT Problems to Tackle'),
+    ('2026-12-06', ['Northwestern', 'Dartmouth', 'Stanford'], 'Northwestern done; Dartmouth second Pick One; Stanford Roommate Note'),
+    ('2026-12-07', ['Yale', 'CMU'], 'Yale final read — Yale done; CMU Successful College Experience'),
+    ('2026-12-08', ['Dartmouth', 'Cornell', 'UPenn'], 'Dartmouth done; Cornell final read; UPenn Thank-You Note'),
+    ('2026-12-09', ['Cornell', 'MIT', 'Stanford'], 'Cornell done; MIT Field of Study; Stanford Short Answers'),
+    ('2026-12-10', ['MIT', 'CMU', 'Brown'], 'MIT short responses; CMU What You Want Us to Know; Brown Growing Up'),
+    ('2026-12-11', ['MIT', 'UPenn', 'NYU'], 'MIT done; UPenn Community at Penn; NYU Bridge Builders'),
+    ('2026-12-12', ['CMU', 'Stanford', 'Brown'], 'CMU done; Stanford Intellectual Curiosity; Brown Open Curriculum'),
+    ('2026-12-13', ['Stanford', 'UPenn', 'Georgetown'], 'Stanford Distinctive Contribution; UPenn Curiosity; Georgetown Significant Activity'),
+    ('2026-12-14', ['Stanford', 'Brown'], 'Stanford done; Brown Teach a Class'),
+    ('2026-12-15', ['UPenn', 'NYU', 'Georgetown'], 'UPenn done; NYU revision; Georgetown Different Viewpoints'),
+    ('2026-12-16', ['Brown', 'NYU'], 'Brown What Brings You Joy; NYU final read'),
+    ('2026-12-17', ['Brown', 'Georgetown'], 'Brown done; Georgetown Why College of A&S'),
+    ('2026-12-18', ['NYU', 'Georgetown'], 'NYU done; Georgetown revision'),
+    ('2026-12-19', ['Georgetown'], 'Georgetown done (+ schedule alumni interview)'),
+    ('2026-12-20', ['Columbia', 'Princeton', 'Northwestern'], 'Final checks + submit the Jan 1 schools'),
+]

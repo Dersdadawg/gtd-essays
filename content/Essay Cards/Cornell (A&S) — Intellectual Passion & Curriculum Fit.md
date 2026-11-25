@@ -3,9 +3,18 @@ title: "Cornell (A&S) — Intellectual Passion & Curriculum Fit"
 tags: [essays, cornell]
 ---
 
-| School | Type | Stage | Deadline | Word limit | Draft |
-|---|---|---|---|---|---|
-| [[Cornell Supplementals\|Cornell (A&S)]] | why-major | **Not Started** | Jan 2, 2027 | 650 words max | ✅ exists |
+| | |
+|---|---|
+| **School** | [[Cornell Supplementals\|Cornell (A&S)]] |
+| **Application deadline** | Jan 2, 2027 (RD) |
+| **Common App school?** | Yes · Common App done ✅ |
+| **Essay type** | why-major |
+| **Word limit** | 650 words max |
+| **Stage** | **Not Started** |
+| **Complete?** | ⬜ No |
+| **Completion date** | Dec 9, 2026 (projected) |
+| **Days worked on** | 9/25 (see [[College Essays Work Log]]) |
+| **Working document** | [Master Question List (Google Doc)](https://docs.google.com/document/d/1HgrO45v8nDYPUwoz0eBR0dgdfUxdrJf-7kCIJ1MtlG8/edit?usp=sharing) |
 
 ## Prompt
 
@@ -16,4 +25,4 @@ tags: [essays, cornell]
 
 *(none yet)*
 
-> [!note] Draft text is kept private. This page shows the prompt, status and feedback only.
+> [!note] Draft text is kept private. This page shows the prompt, status and feedback; the essay itself lives in the working document.

@@ -3,9 +3,18 @@ title: "Georgetown — Why Major"
 tags: [essays, georgetown]
 ---
 
-| School | Type | Stage | Deadline | Word limit | Draft |
-|---|---|---|---|---|---|
-| [[Georgetown Supplementals\|Georgetown]] | extracurricular | **—** | Jan 10, 2027 | — | ✅ exists |
+| | |
+|---|---|
+| **School** | [[Georgetown Supplementals\|Georgetown]] |
+| **Application deadline** | Jan 10, 2027 (RD) |
+| **Common App school?** | No (own application) |
+| **Essay type** | extracurricular |
+| **Word limit** | — |
+| **Stage** | **—** |
+| **Complete?** | ⬜ No |
+| **Completion date** | Dec 19, 2026 (projected) |
+| **Days worked on** | 8/10, 9/25, 11/18 (see [[College Essays Work Log]]) |
+| **Working document** | [Master Question List (Google Doc)](https://docs.google.com/document/d/1HgrO45v8nDYPUwoz0eBR0dgdfUxdrJf-7kCIJ1MtlG8/edit?usp=sharing) |
 
 ## Prompt
 
@@ -16,4 +25,4 @@ tags: [essays, georgetown]
 
 *(none yet)*
 
-> [!note] Draft text is kept private. This page shows the prompt, status and feedback only.
+> [!note] Draft text is kept private. This page shows the prompt, status and feedback; the essay itself lives in the working document.
