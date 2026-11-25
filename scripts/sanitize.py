@@ -16,7 +16,7 @@ def key(school):
     return 'Cornell' if school.startswith('Cornell') else school
 def days_worked(k):
     return ', '.join(short(d) for d, ss, _ in DONE if k in ss) or '—'
-GDOC_LINK = '[Master Question List (Google Doc)](https://docs.google.com/document/d/1HgrO45v8nDYPUwoz0eBR0dgdfUxdrJf-7kCIJ1MtlG8/edit?usp=sharing)'
+GDOC_LINK = '[Essays working doc (Google Doc)](https://docs.google.com/document/d/1oABT0zm0Jpqpxa5b85qE_USB_x5lxWxvYCtzQXmE9zw/edit?usp=sharing)'
 
 shutil.rmtree(OUT, ignore_errors=True)
 os.makedirs(os.path.join(OUT, 'Essay Cards'))
@@ -29,7 +29,7 @@ DEADLINES = {
     'MIT': 'Jan 4, 2027', 'CMU': 'Jan 4, 2027', 'Stanford': 'Jan 5, 2027', 'UPenn': 'Jan 5, 2027',
     'Brown': 'Jan 5, 2027', 'NYU': 'Jan 5, 2027', 'Georgetown': 'Jan 10, 2027', 'Common App': 'Nov 1, 2026',
 }
-GDOC = 'https://docs.google.com/document/d/1HgrO45v8nDYPUwoz0eBR0dgdfUxdrJf-7kCIJ1MtlG8/edit?usp=sharing'
+GDOC = 'https://docs.google.com/document/d/1oABT0zm0Jpqpxa5b85qE_USB_x5lxWxvYCtzQXmE9zw/edit?usp=sharing'
 
 # --- kanban stage per card ---
 kanban = open(os.path.join(PROJ, 'College Essays Kanban.md')).read()
@@ -142,7 +142,7 @@ master = '| School | Essay (action item) | Word limit | Stage | Complete? | Comp
     f'{short(c["cdate"])} {"" if c["complete"] else "(proj.)"} |\n'
     for c in sorted(cards, key=lambda c: (c['school'], c['name'])))
 hub = re.sub(r'```dataview.*?```', master, hub, flags=re.S)
-hub = hub.replace('# Essay Hub\n', '')
+hub = hub.replace('# Essay Hub\n', '').replace('[Master Question List](' + 'https://docs.google.com/document/d/1HgrO45v8nDYPUwoz0eBR0dgdfUxdrJf-7kCIJ1MtlG8/edit?usp=sharing' + ')', '[Essays working doc (Google Doc)](' + GDOC + ')')
 dash = ['| School | Deadline | Common App school? / done? | Essays done | Complete? | Completion date | Days worked on |',
         '|---|---|---|---|---|---|---|']
 sd = lambda x: D(x).strftime('%b %-d')

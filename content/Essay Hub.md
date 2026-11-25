@@ -66,7 +66,7 @@ Central index for the whole college essay season. Progress lives on the [[Colleg
 - Each card note also has its own **## Feedback** section for essay-specific notes.
 
 ## All Essays (master list)
-[Master Question List](https://docs.google.com/document/d/1HgrO45v8nDYPUwoz0eBR0dgdfUxdrJf-7kCIJ1MtlG8/edit?usp=sharing)
+[Essays working doc (Google Doc)](https://docs.google.com/document/d/1oABT0zm0Jpqpxa5b85qE_USB_x5lxWxvYCtzQXmE9zw/edit?usp=sharing)
 
 | School | Essay (action item) | Word limit | Stage | Complete? | Completion date |
 |---|---|---|---|---|---|

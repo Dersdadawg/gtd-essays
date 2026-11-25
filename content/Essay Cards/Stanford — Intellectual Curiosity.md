@@ -14,7 +14,7 @@ tags: [essays, stanford]
 | **Complete?** | ✅ Yes |
 | **Completion date** | Nov 26, 2026 (actual) |
 | **Days worked on** | 9/21, 11/5, 11/16, 11/19, 11/21, 11/22, 11/23, 11/25 (see [[College Essays Work Log]]) |
-| **Working document** | [Master Question List (Google Doc)](https://docs.google.com/document/d/1HgrO45v8nDYPUwoz0eBR0dgdfUxdrJf-7kCIJ1MtlG8/edit?usp=sharing) |
+| **Working document** | [Essays working doc (Google Doc)](https://docs.google.com/document/d/1oABT0zm0Jpqpxa5b85qE_USB_x5lxWxvYCtzQXmE9zw/edit?usp=sharing) |
 
 ## Prompt
 
