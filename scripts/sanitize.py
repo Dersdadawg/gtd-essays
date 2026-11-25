@@ -87,7 +87,7 @@ for fn in sorted(os.listdir(CARDS)):
     included.add(name)
     sk = 'Cornell' if school.startswith('Cornell') else school
     k = key(school)
-    complete = st == 'Submitted' or name.startswith('Georgetown — Personal')
+    complete = st == 'Submitted' or name.startswith('Georgetown — Personal') or (k in SCHOOLS and SCHOOLS[k][4])
     if k == 'Common App':
         ca, cdate, dl = 'Yes · done ✅', COMMON_APP_DONE, 'Nov 1, 2026'
     else:
@@ -95,7 +95,9 @@ for fn in sorted(os.listdir(CARDS)):
         ca = ('Yes · Common App done ✅' if is_ca else 'No (own application)')
         cdate = COMMON_APP_DONE if (complete and k in ('Harvard', 'UIUC') or name.startswith('Georgetown — Personal')) else sdate
         dl = fmt(dl_) + f' ({plan_})'
-    cards[-1].update(complete=complete, cdate=cdate)
+    if complete and st not in ('Submitted',) and k in SCHOOLS and SCHOOLS[k][4]:
+        st = 'Final Review'
+    cards[-1].update(complete=complete, cdate=cdate, stage=st)
     when = f'{fmt(cdate)} ({"actual" if complete else "projected"})'
     school_cell = ("[[" + k + " Supplementals\\|" + school + "]]") if k != "Common App" else school
     rows = [('School', school_cell), ('Application deadline', dl), ('Common App school?', ca),

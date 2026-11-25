@@ -10,10 +10,10 @@ tags: [essays, stanford]
 | **Common App school?** | Yes · Common App done ✅ |
 | **Essay type** | intellectual |
 | **Word limit** | 100 to 250 words |
-| **Stage** | **Revising** |
-| **Complete?** | ⬜ No |
-| **Completion date** | Dec 14, 2026 (projected) |
-| **Days worked on** | 9/21, 11/5, 11/16, 11/19, 11/21, 11/22, 11/23 (see [[College Essays Work Log]]) |
+| **Stage** | **Final Review** |
+| **Complete?** | ✅ Yes |
+| **Completion date** | Nov 26, 2026 (actual) |
+| **Days worked on** | 9/21, 11/5, 11/16, 11/19, 11/21, 11/22, 11/23, 11/25 (see [[College Essays Work Log]]) |
 | **Working document** | [Master Question List (Google Doc)](https://docs.google.com/document/d/1HgrO45v8nDYPUwoz0eBR0dgdfUxdrJf-7kCIJ1MtlG8/edit?usp=sharing) |
 
 ## Prompt

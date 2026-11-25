@@ -10,10 +10,10 @@ tags: [essays, uc]
 | **Common App school?** | No (own application) |
 | **Essay type** | community |
 | **Word limit** | 350 words max, pick 4 of 8 |
-| **Stage** | **Revising** |
-| **Complete?** | ⬜ No |
-| **Completion date** | Nov 27, 2026 (projected) |
-| **Days worked on** | 8/15, 9/12, 11/5, 11/16, 11/19 (see [[College Essays Work Log]]) |
+| **Stage** | **Final Review** |
+| **Complete?** | ✅ Yes |
+| **Completion date** | Nov 26, 2026 (actual) |
+| **Days worked on** | 8/15, 9/12, 11/5, 11/16, 11/19, 11/23, 11/25 (see [[College Essays Work Log]]) |
 | **Working document** | [Master Question List (Google Doc)](https://docs.google.com/document/d/1HgrO45v8nDYPUwoz0eBR0dgdfUxdrJf-7kCIJ1MtlG8/edit?usp=sharing) |
 
 ## Prompt
