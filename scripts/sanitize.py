@@ -96,7 +96,7 @@ for fn in sorted(os.listdir(CARDS)):
         cdate = COMMON_APP_DONE if (complete and k in ('Harvard', 'UIUC') or name.startswith('Georgetown — Personal')) else sdate
         dl = fmt(dl_) + f' ({plan_})'
     if complete and st not in ('Submitted',) and k in SCHOOLS and SCHOOLS[k][4]:
-        st = 'Final Review'
+        st = 'Done ✅'
     cards[-1].update(complete=complete, cdate=cdate, stage=st)
     when = f'{fmt(cdate)} ({"actual" if complete else "projected"})'
     school_cell = ("[[" + k + " Supplementals\\|" + school + "]]") if k != "Common App" else school
@@ -158,7 +158,18 @@ hub = '---\ntitle: Essay Hub\n---\n' + dash + hub.strip() + '\n'
 
 
 # --- kanban -> readable board ---
-k = re.sub(r'(?s)^---.*?---\n', '', kanban)
+# move finished (not yet submitted) cards into Final Review on the site's board
+moved = []
+kb_lines = []
+for line in kanban.splitlines():
+    m = re.search(r'\[\[([^\]|]+)\]\]', line)
+    c = next((c for c in cards if m and c['name'] == m.group(1)), None)
+    if c and c['stage'] == 'Done ✅':
+        moved.append(re.sub(r'^- \[ \]', '- [x]', line))
+        continue
+    kb_lines.append(line)
+kanban_site = '\n'.join(kb_lines).replace('## Final Review\n', '## Final Review\n\n' + '\n'.join(moved) + '\n', 1)
+k = re.sub(r'(?s)^---.*?---\n', '', kanban_site)
 k = re.sub(r'(?s)%% kanban:settings.*?%%', '', k)
 k = re.sub(r' #essays/\S+', '', k)
 counts = []

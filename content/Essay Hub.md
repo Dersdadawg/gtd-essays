@@ -109,14 +109,14 @@ Central index for the whole college essay season. Progress lives on the [[Colleg
 | Princeton | [[Princeton — Lived Experience]] | Please respond in 500 words or fewer. | Drafting | ⬜ | 12/6 (proj.) |
 | Princeton | [[Princeton — Short Answers (3)]] | 50 words max each | Drafting | ⬜ | 12/6 (proj.) |
 | Princeton | [[Princeton — Why Major]] | Please respond in 250 words or fewer | — | ⬜ | 12/6 (proj.) |
-| Stanford | [[Stanford — Distinctive Contribution]] | — | Final Review | ✅ | 11/26  |
-| Stanford | [[Stanford — Intellectual Curiosity]] | 100 to 250 words | Final Review | ✅ | 11/26  |
-| Stanford | [[Stanford — Roommate Note]] | 100 to 250 words | Final Review | ✅ | 11/26  |
-| Stanford | [[Stanford — Short Answers (5)]] | 50 words max each | Final Review | ✅ | 11/26  |
-| UC | [[UC PIQ — Academic Subject (Linguistics)]] | 350 words max, pick 4 of 8 | Final Review | ✅ | 11/26  |
-| UC | [[UC PIQ — Community (TVoTW)]] | 350 words max, pick 4 of 8 | Final Review | ✅ | 11/26  |
-| UC | [[UC PIQ — Opportunity (Iowa)]] | 350 words max, pick 4 of 8 | Final Review | ✅ | 11/26  |
-| UC | [[UC PIQ — Talent or Skill]] | 350 words max, pick 4 of 8 | Final Review | ✅ | 11/26  |
+| Stanford | [[Stanford — Distinctive Contribution]] | — | Done ✅ | ✅ | 11/26  |
+| Stanford | [[Stanford — Intellectual Curiosity]] | 100 to 250 words | Done ✅ | ✅ | 11/26  |
+| Stanford | [[Stanford — Roommate Note]] | 100 to 250 words | Done ✅ | ✅ | 11/26  |
+| Stanford | [[Stanford — Short Answers (5)]] | 50 words max each | Done ✅ | ✅ | 11/26  |
+| UC | [[UC PIQ — Academic Subject (Linguistics)]] | 350 words max, pick 4 of 8 | Done ✅ | ✅ | 11/26  |
+| UC | [[UC PIQ — Community (TVoTW)]] | 350 words max, pick 4 of 8 | Done ✅ | ✅ | 11/26  |
+| UC | [[UC PIQ — Opportunity (Iowa)]] | 350 words max, pick 4 of 8 | Done ✅ | ✅ | 11/26  |
+| UC | [[UC PIQ — Talent or Skill]] | 350 words max, pick 4 of 8 | Done ✅ | ✅ | 11/26  |
 | UIUC | [[UIUC — First-Choice Major Experience]] | 150 words | Submitted | ✅ | 11/1  |
 | UIUC | [[UIUC — Goals & First-Choice Major]] | 150 words | Submitted | ✅ | 11/1  |
 | UIUC | [[UIUC — Second-Choice Major or Career Goals]] | — | Submitted | ✅ | 11/1  |

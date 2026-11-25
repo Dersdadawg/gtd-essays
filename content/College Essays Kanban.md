@@ -8,8 +8,8 @@ title: College Essays Kanban
 | Not Started | 10 |
 | Brainstorming | 0 |
 | Drafting | 21 |
-| Revising | 14 |
-| Final Review | 0 |
+| Revising | 6 |
+| Final Review | 8 |
 | Submitted | 9 |
 
 ## Key Dates
@@ -69,14 +69,6 @@ title: College Essays Kanban
 
 ## Revising
 
-- [ ] [[UC PIQ — Academic Subject (Linguistics)]]
-- [ ] [[UC PIQ — Community (TVoTW)]]
-- [ ] [[UC PIQ — Opportunity (Iowa)]]
-- [ ] [[UC PIQ — Talent or Skill]]
-- [x] [[Stanford — Distinctive Contribution]]
-- [x] [[Stanford — Intellectual Curiosity]]
-- [x] [[Stanford — Roommate Note]]
-- [x] [[Stanford — Short Answers (5)]]
 - [ ] [[Columbia — Adversity]]
 - [ ] [[Columbia — Disagreement]]
 - [ ] [[Columbia — Intellectual Life List]]
@@ -87,7 +79,16 @@ title: College Essays Kanban
 
 ## Final Review
 
-*(empty)*
+- [x] [[UC PIQ — Academic Subject (Linguistics)]]
+- [x] [[UC PIQ — Community (TVoTW)]]
+- [x] [[UC PIQ — Opportunity (Iowa)]]
+- [x] [[UC PIQ — Talent or Skill]]
+- [x] [[Stanford — Distinctive Contribution]]
+- [x] [[Stanford — Intellectual Curiosity]]
+- [x] [[Stanford — Roommate Note]]
+- [x] [[Stanford — Short Answers (5)]]
+
+
 
 ## Submitted
 

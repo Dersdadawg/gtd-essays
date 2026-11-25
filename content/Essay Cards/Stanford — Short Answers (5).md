@@ -10,7 +10,7 @@ tags: [essays, stanford]
 | **Common App school?** | Yes · Common App done ✅ |
 | **Essay type** | short-answer |
 | **Word limit** | 50 words max each |
-| **Stage** | **Final Review** |
+| **Stage** | **Done ✅** |
 | **Complete?** | ✅ Yes |
 | **Completion date** | Nov 26, 2026 (actual) |
 | **Days worked on** | 9/21, 11/5, 11/16, 11/19, 11/21, 11/22, 11/23, 11/25 (see [[College Essays Work Log]]) |
